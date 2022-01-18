@@ -169,6 +169,8 @@ export default {
         },
         fillMap()
         {
+            this.map.updateChoropleth(null, {reset: true});
+
             this.trackedCountries.forEach(element => {
                 this.countryObject[element.code] = {fillKey: 'trackedFill'};
                 this.map.updateChoropleth(this.countryObject);
